@@ -148,7 +148,7 @@ module Hubspot
       end
     end
 
-    attr_reader :properties, :vid, :is_new
+    attr_reader :properties, :vid, :is_new, :raw_data
     attr_reader :is_contact
 
     def initialize(response_hash)
@@ -156,6 +156,7 @@ module Hubspot
       @properties = Hubspot::Utils.properties_to_hash(props) unless props.blank?
       @is_contact = response_hash["is-contact"]
       @vid = response_hash['vid']
+      @raw_data = response_hash
     end
 
     def [](property)

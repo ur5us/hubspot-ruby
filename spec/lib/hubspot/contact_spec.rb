@@ -16,6 +16,7 @@ describe Hubspot::Contact do
     its(['phone']){ should == '555-555-5432' }
     its(:utk){ should == '1234567890' }
     its(:vid){ should == 82325 }
+    its(:raw_data){ should == example_contact_hash }
   end
 
   describe '.create!' do
