@@ -2,9 +2,10 @@ describe Hubspot::DealProperties do
   describe '.add_default_parameters' do
     let(:opts) { {} }
     subject { Hubspot::DealProperties.add_default_parameters(opts) }
+
     context 'default parameters' do
-      context 'without property parameter' do
-        its([:property]) { should == 'email' }
+      it 'is empty' do
+        expect(subject).to eql opts
       end
 
       context 'with property parameter' do

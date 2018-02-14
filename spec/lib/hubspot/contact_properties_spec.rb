@@ -3,8 +3,8 @@ describe Hubspot::ContactProperties do
     let(:opts) { {} }
     subject { Hubspot::ContactProperties.add_default_parameters(opts) }
     context 'default parameters' do
-      context 'without property parameter' do
-        its([:property]) { should == 'email' }
+      it 'is empty' do
+        expect(subject).to eql opts
       end
 
       context 'with property parameter' do

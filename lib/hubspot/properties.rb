@@ -14,11 +14,7 @@ module Hubspot
       # TODO: properties can be set as configuration
       # TODO: find the way how to set a list of Properties + merge same property key if present from opts
       def add_default_parameters(opts={})
-        if opts.keys.map(&:to_s).include? 'property'
-          opts
-        else
-          opts.merge(property: DEFAULT_PROPERTY)
-        end
+        opts
       end
 
       def all(path, opts={}, filter={})
